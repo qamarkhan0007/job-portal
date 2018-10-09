@@ -26,11 +26,18 @@ import {
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +64,8 @@ import { HeaderComponent } from './header/header.component';
     MatDialogModule,
     MatAutocompleteModule,
     MatTabsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
