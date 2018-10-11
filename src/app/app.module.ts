@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MatButtonModule,
   MatMenuModule,
@@ -30,6 +31,7 @@ import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { HttpModule } from '@angular/http';
 
 @NgModule({
   declarations: [
@@ -65,7 +67,9 @@ import { AppRoutingModule } from './/app-routing.module';
     MatAutocompleteModule,
     MatTabsModule,
     MatSlideToggleModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

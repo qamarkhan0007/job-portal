@@ -1,43 +1,84 @@
-<div class="container">
-  <div class="row">
+  <div class="container register">
+    <div class="row">
+      <div class="col-md-3 register-left">
+        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+        <h3>Welcome</h3>
+        <p>You are 30 seconds away from earning your own money!</p>
+      </div>
+      <div class="col-md-9 register-right">
+        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="home" (click)="changeTab('login')" [ngClass]="login ? 'active' : ''">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="register-tab" data-toggle="tab" href="#registers" role="tab" aria-controls="profile" (click)="changeTab('register')" [ngClass]="register ? 'active' : ''">Register</a>
+          </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
 
-    <div class="main">
+          <form #form="ngForm" class="" action="index.html" method="post">
+            <div class="tab-pane fade show" id="login" role="tabpanel" aria-labelledby="login-tab" [ngClass]="login ? 'active' : ''">
+              <h3 class="register-heading">Login</h3>
+              <div class="row register-form">
+                <div class="container w-50">
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="username" [(ngModel)]="username" placeholder="Username *" value="" />
+                  </div>
+                  <div class="form-group">
+                    <input type="text" class="form-control" name="password" [(ngModel)]="password" placeholder="Password *" value="" />
+                  </div>
+                  <input type="button" class="btnRegister" (click)="loginUser(form.value)" value="Login"/>
 
-      <h3>Please Log In, or <a href="#">Sign Up</a></h3>
-      <div class="row">
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-primary btn-block">Facebook</a>
-        </div>
-        <div class="col-xs-6 col-sm-6 col-md-6">
-          <a href="#" class="btn btn-lg btn-info btn-block">Google</a>
+                </div>
+
+              </div>
+            </div>
+          </form>
+
+          <div class="tab-pane fade show " id="registers" role="tabpanel" aria-labelledby="register-tab" [ngClass]="register ? 'active' : ''">
+            <h3  class="register-heading">Registration</h3>
+            <div class="row register-form">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="First Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Last Name *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Email *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
+                </div>
+
+
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Password *" value="" />
+                </div>
+                <div class="form-group">
+                  <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
+                </div>
+                <div class="form-group">
+                  <select class="form-control">
+                    <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                    <option>What is your Birthdate?</option>
+                    <option>What is Your old Phone Number</option>
+                    <option>What is your Pet Name?</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="`Answer *" value="" />
+                </div>
+                <input type="submit" class="btnRegister"  value="Register"/>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
-      <div class="login-or">
-        <hr class="hr-or">
-        <span class="span-or">or</span>
-      </div>
-
-      <form role="form">
-        <div class="form-group">
-          <label for="inputUsernameEmail">Username or email</label>
-          <input type="text" class="form-control" id="inputUsernameEmail">
-        </div>
-        <div class="form-group">
-          <a class="pull-right" href="#">Forgot password?</a>
-          <label for="inputPassword">Password</label>
-          <input type="password" class="form-control" id="inputPassword">
-        </div>
-        <div class="checkbox pull-right">
-          <label>
-            <input type="checkbox">
-            Remember me </label>
-        </div>
-        <button type="submit" class="btn btn btn-primary">
-          Log In
-        </button>
-      </form>
-
     </div>
 
   </div>
-</div>
